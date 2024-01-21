@@ -8,9 +8,15 @@ class StringBuilder {
   getValue() {
     return this.#value;
   }
-  padEnd(str) {}
-  padStart(str) {}
-  padBoth(str) {}
+  padEnd(str) {
+    this.#value = this.#value.concat(str);
+  }
+  padStart(str) {
+    this.#value = str.concat(this.#value);
+  }
+  padBoth(str) {
+    this.#value = str + this.#value + str;
+  }
 }
 
 const builder = new StringBuilder('.');
